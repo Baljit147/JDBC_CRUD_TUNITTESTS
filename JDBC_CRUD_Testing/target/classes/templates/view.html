@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>View Drinks</title>
+	<link th:href="@{/css/styling.css}" rel="stylesheet"/>
+</head>
+
+<body>
+<h1>Drinks List</h1>
+
+<table>
+	<tr>
+		<th>Name</th>
+		<th>Main</th>
+		<th>Amount 1</th>
+		<th>Second</th>
+		<th>Amount 2</th>
+		<th>Directions</th>
+	</tr>
+
+	<tr th:each="drinks:${drinkList}">
+		<td th:text="${drinks.name}"></td>
+		<td th:text="${drinks.main}"></td>
+		<td th:text="${drinks.amount1}"></td>
+		<td th:text="${drinks.second}"></td>
+		<td th:text="${drinks.amount2}"></td>
+		<td th:text="${drinks.directions}"></td>
+		<td><a href="" th:href="@{/edit/{id}(id=${drinks.id})}">EDIT</a></td>
+		<td><a href="" th:href="@{/delete/{id}(id=${drinks.id})}">DELETE</a></td>
+	</tr>
+</table>
+
+<a th:href="@{/}">Add Another Drink</a>
+
+</body>
+
+</html>

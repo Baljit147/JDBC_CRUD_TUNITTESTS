@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Add Drink</title>
+	<link th:href="@{/css/styling.css}" rel="stylesheet"/>
+</head>
+
+<body>
+<h1>Add Drink</h1>
+<form action="#" th:action="@{/add}" th:object="${drink}" method="get"><br><br>
+	Drink Name: <input type="text" th:field="*{name}"><br><br>
+	Main: <input type="text" th:field="*{main}"><br><br>
+	Amount 1: <input type="text" th:field="*{amount1}"><br><br>
+	Second: <input type="text" th:field="*{second}"><br><br>
+	Amount 2: <input type="text" th:field="*{amount2}"><br><br>
+	Directions: <input type="text" th:field="*{directions}"><br><br>
+	<input type="submit" value="Submit">
+</form>
+
+<a th:href="@{/view}">View Drinks</a>
+
+</body>
+
+</html>
